@@ -1,0 +1,24 @@
+<div
+  class="bg-white shadow-md border rounded-xl p-6 flex items-center justify-between gap-4"
+>
+  <div class="flex items-center">
+    <div class="mr-3">
+      <img
+        [src]="cardItem().image"
+        alt="product().title"
+        class="w-[50px] h-[50px] object-contain"
+      />
+    </div>
+    <div class="flex flex-col">
+      <span class="text-md font-bold">{{ cardItem().title }}</span>
+      <span class="text-sm mt-2">{{ "$ " + cardItem().price }}</span>
+    </div>
+  </div>
+
+  <div>
+    <app-light-button
+      [label]="btn()"
+      (btnCliked)="cartService.removeFromCart(cardItem().id)"
+    />
+  </div>
+</div>

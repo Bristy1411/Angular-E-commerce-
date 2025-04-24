@@ -1,0 +1,10 @@
+<div
+  class="bg-sky-400 text-white px-4 py-3 shadow-lg flex justify-between items-center"
+>
+  <h3 routerLink="/" class="text-3xl cursor-pointer">{{ title() }}</h3>
+  <app-primary-button
+    [label]="btn() + ' ' + cartService.cart().length"
+    (btnCliked)="showButtonlicked()"
+    routerLink="/cart-list"
+  />
+</div>
